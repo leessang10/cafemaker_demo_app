@@ -28,12 +28,12 @@ const NavItem = styled(Link)<{ $active: boolean }>`
   align-items: center;
   gap: 0.25rem;
   padding: 0.5rem;
+  text-decoration: none;
   color: ${(props) => (props.$active ? 'var(--primary-color)' : '#4B5563')};
 `;
 
 const NavText = styled.span`
   font-size: 0.75rem;
-  text-decoration: none;
 `;
 
 export default function HomeBar() {
