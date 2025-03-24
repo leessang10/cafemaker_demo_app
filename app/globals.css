@@ -1,0 +1,34 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-color: #936639; /* 브라운 */
+  --primary-dark: #936639; /* 더 어두운 브라운 */
+  --secondary-color: #4a6741; /* 짙은 그린 */
+  --secondary-dark: #3d543b; /* 더 어두운 그린 */
+  --primary-bg: rgba(147, 102, 57, 0.1);
+  --primary-light: rgba(147, 102, 57, 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
