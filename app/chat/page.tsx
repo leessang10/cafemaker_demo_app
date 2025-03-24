@@ -6,13 +6,31 @@ import { useState, useRef, TouchEvent } from 'react';
 
 const ChatListContainer = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Header = styled.header`
+  padding: 1rem;
+  background-color: white;
+  border-bottom: 1px solid #f3f4f6;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+`;
+
+const HeaderTitle = styled.h1`
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
 `;
 
 const ChatItemContainer = styled.div`
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: #ef4444;
+  background-color: white;
 `;
 
 const ChatItemContent = styled.div<{ offset: number }>`
@@ -22,6 +40,7 @@ const ChatItemContent = styled.div<{ offset: number }>`
   width: 100%;
   background: white;
   min-width: 0;
+  box-sizing: border-box;
 `;
 
 const ExitButton = styled.div`
@@ -216,6 +235,9 @@ export default function ChatListPage() {
   return (
     <MobileLayout showHomeBar={true}>
       <ChatListContainer>
+        <Header>
+          <HeaderTitle>상담 채팅</HeaderTitle>
+        </Header>
         {chatRooms.map((room) => (
           <ChatItemContainer key={room.id}>
             <ExitButton onClick={() => handleExit(room.id)}>나가기</ExitButton>
